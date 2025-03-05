@@ -1,0 +1,79 @@
+Technical Skills
+
+
+Programming Languages:    
+Front-End: HTML, CSS, JavaScript                               [ANUJ  ]
+Back-End: Python, Java, Ruby, PHP                              [ANUJ , HARSH ]
+Mobile Development: Swift (iOS), Kotlin or Java (Android)      [HARSH  ]
+
+
+Frameworks and Libraries:    
+Front-End: React, Angular, Vue.js                              [ANUJ ]
+Back-End: Django, Flask, Node.js, Ruby on Rails                [ HARSH ]
+
+
+Database Management:     
+SQL (MySQL, PostgreSQL)                                         [HARSH  ]
+NoSQL (MongoDB, Firebase)                                       [HARSH  ]
+
+
+Version Control:    [ANUJ , HARSH , ]
+Git, GitHub/GitLab
+Design and User Experience (UX) Skills
+
+
+UI/UX Design:     
+Knowledge of design principles and tools like Adobe XD, Sketch, Figma   [ANUJ ]
+Understanding user experience and creating intuitive interfaces         [ANUJ ]
+
+
+Prototyping and Wireframing:
+Creating visual representations of your app's design and functionality   [ANUJ ]
+Project Management Skills                                                [ANUJ ]
+
+
+Planning and Coordination:
+Ability to plan, set milestones, and coordinate with a team if needed           [ANUJ]
+
+
+Agile Methodology:
+Understanding agile principles and working in sprints                           [ANUJ]
+Soft Skills
+
+
+Problem-Solving:
+Analyzing issues and developing efficient solutions                            [ANUJ ,  HARSH]
+
+
+Communication:
+Effectively communicating ideas and collaborating with others                  [ANUJ]
+
+
+Creativity and Innovation:
+Thinking outside the box to create unique features and solutions               [ANUJ]
+Business Skills                                                                [ANUJ]
+
+
+Market Research:
+Understanding the market, your competitors, and your target audience           [ANUJ]
+
+
+Marketing and Sales:
+Promoting your app and reaching your audience                                    [ANUJ]
+Additional Skills                                                                [ANUJ]
+
+
+Cloud Services:
+Knowledge of cloud platforms like AWS, Google Cloud, or Azure for hosting and scaling your app   [ANUJ,,HARSH]  
+
+Security Best Practices:
+Ensuring your app is secure and protecting user data                             [ANUJ, HARSH]
+
+
+
+
+DEADLINE OF WORKING APP,WEBSITE === 29/05/2025
+
+
+
+
