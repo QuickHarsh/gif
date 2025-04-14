@@ -1,14 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const categories = [
   {
     title: "Fruits & Vegetables",
     description: "Farm-fresh vegetables, fruits, and herbs",
     image: "/images/categories/fruits-vegetables.jpg",
+    slug: "fruits-vegetables",
     items: ["Vegetables", "Fruits", "Herbs", "Microgreens"]
   },
   {
@@ -107,85 +108,54 @@ const categories = [
     image: "/images/categories/instant.webp",
     items: ["Fries","Burger Patty","Instant Mix","Cake & Brownies",""]
   },
-];
+].map(category => ({
+  ...category,
+  slug: category.title.toLowerCase().replace(/[&,\s]+/g, '-').replace(/[^a-z0-9-]/g, '')
+}));
 
 export default function CategorySection() {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-12 bg-white dark:bg-gray-900">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Categories</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Explore our wide range of high-quality products and supplies for your restaurant
-          </p>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">OUR CATEGORIES</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3">
           {categories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-800/50 overflow-hidden border border-gray-100 dark:border-gray-700"
-            >
-              <div className="relative bg-gray-100 dark:bg-gray-700 overflow-hidden">
-                <div className="relative h-48 w-full">
+            <Link href={`/category/${category.slug}`} key={category.title}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer"
+              >
+                <div className="relative w-full" style={{ paddingBottom: '100%' }}>
                   <Image
                     src={category.image}
                     alt={category.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 33vw, (max-width: 1200px) 20vw, 14vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    priority={index < 3}
+                    priority={index < 7}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold">{category.title}</h3>
-                  </div>
                 </div>
-              </div>
-              
-              <div className="p-6">
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{category.description}</p>
-                <div className="space-y-2 mb-6">
-                  {category.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center text-gray-700 dark:text-gray-300">
-                      <span className="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                      {item}
-                    </div>
-                  ))}
+                <div className="p-2 text-center">
+                  <h3 className="text-xs font-medium text-gray-900 dark:text-white leading-tight">
+                    {category.title}
+                  </h3>
                 </div>
-                <motion.button
-                  whileHover={{ x: 5 }}
-                  className="flex items-center text-primary-600 dark:text-primary-400 font-semibold group-hover:text-primary-700 dark:group-hover:text-primary-300"
-                >
-                  Explore Category
-                  <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 text-center"
-        >
-          <button className="btn-primary">
-            View All Categories
-          </button>
-        </motion.div>
       </div>
     </section>
   );
