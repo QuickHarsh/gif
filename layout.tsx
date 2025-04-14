@@ -7,18 +7,18 @@ import { ThemeProvider } from "./components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Get Instant Fresh - B2B Restaurant Supplies Platform",
-  description: "Get high-quality ingredients and supplies for your restaurant business",
+  title: "Hyperpure Clone",
+  description: "A modern e-commerce platform for fresh produce",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200`}>
+      <body className={`${inter.className} w-full overflow-x-hidden`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

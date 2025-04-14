@@ -26,8 +26,8 @@ const categories = [
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      <div className="container-custom py-20 relative">
+    <section className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-20 relative">
         {/* Floating elements animation */}
         <motion.div
           initial={{ opacity: 0 }}
