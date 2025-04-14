@@ -103,7 +103,7 @@ const categories = [
     items: ["Cashews","Peanuts & Others","Almonds,Risens & Pista","Magaj"]
   },
   {
-    title: "Frozen & Instant Food",
+    title: "Bread & Buns Bases",
     description: "Grade - A Frozen & Instant Food",
     image: "/images/categories/instant.webp",
     items: ["Fries","Burger Patty","Instant Mix","Cake & Brownies",""]
