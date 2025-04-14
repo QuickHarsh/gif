@@ -8,7 +8,7 @@ import DeliveryModelsSection from './components/DeliveryModelsSection';
 import SustainabilitySection from './components/SustainabilitySection';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
-import ThemeToggle from './components/ThemeToggle';
+import { ThemeToggle } from './components/ThemeToggle';
 
 export default function Home() {
   return (
