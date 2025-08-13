@@ -16,6 +16,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "target": "es2015",
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "@/lib/*": ["app/lib/*"],
+      "@/models/*": ["app/models/*"]
+    },
     "plugins": [
       {
         "name": "next"

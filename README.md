@@ -1,4 +1,4 @@
-# Get Instant Fresh - B2B Restaurant Supplies Platform
+# Cheflinx - B2B Restaurant Supplies Platform
 
 A modern B2B platform for restaurant supplies and ingredients, built with Next.js and React.
 
@@ -59,4 +59,4 @@ npm run dev
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.

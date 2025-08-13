@@ -95,7 +95,7 @@ export default function SustainabilitySection() {
   };
 
   return (
-    <section id="sustainability" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section id="sustainability" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,8 +104,8 @@ export default function SustainabilitySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Committed to Sustainability</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Committed to Sustainability</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Building a sustainable future through responsible business practices and environmental stewardship.
           </p>
         </motion.div>
@@ -188,13 +188,13 @@ export default function SustainabilitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm dark:shadow-gray-800/50 hover:shadow-md dark:hover:shadow-gray-700/50 transition-shadow"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-primary-600 dark:text-primary-400 mb-4">
+              <div className="text-primary-600 mb-4">
                 {initiative.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{initiative.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">{initiative.description}</p>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">{initiative.title}</h3>
+              <p className="text-gray-600 text-sm">{initiative.description}</p>
             </motion.div>
           ))}
         </div>
@@ -208,7 +208,7 @@ export default function SustainabilitySection() {
         >
           <Link 
             href="/sustainability"
-            className="inline-flex items-center space-x-2 bg-primary-600 dark:bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
+            className="inline-flex items-center space-x-2 bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
           >
             Learn More About Our Initiatives
           </Link>
@@ -216,4 +216,4 @@ export default function SustainabilitySection() {
       </div>
     </section>
   );
-} 
+}

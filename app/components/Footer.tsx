@@ -4,37 +4,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { staggerContainer, fadeInUp } from '../utils/animations';
 
 const footerLinks = {
   company: [
-    { name: 'About Us', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Partner with Us', href: '#' },
-    { name: 'Blog', href: '#' }
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Partner with Us', href: '/partner' },
+    { name: 'Blog', href: '/blog' }
   ],
   services: [
-    { name: 'Wholesale Delivery', href: '#' },
-    { name: 'Express Delivery', href: '#' },
-    { name: 'Quality Standards', href: '#' },
-    { name: 'Sustainability', href: '#' }
+    { name: 'Wholesale Delivery', href: '/services/wholesale' },
+    { name: 'Express Delivery', href: '/services/express' },
+    { name: 'Quality Standards', href: '/quality-standards' },
+    { name: 'Sustainability', href: '/sustainability' }
   ],
   support: [
-    { name: 'Help Center', href: '#' },
-    { name: 'FAQs', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Privacy Policy', href: '#' }
+    { name: 'Help Center', href: '/help-center' },
+    { name: 'FAQs', href: '/faqs' },
+    { name: 'Terms of Service', href: '/terms-of-service' },
+    { name: 'Privacy Policy', href: '/privacy-policy' }
   ],
   contact: [
     { icon: <FiPhone />, text: '+91 8717986200' },
-    { icon: <FiMail />, text: 'support@getinstantfresh.com' },
+    { icon: <FiMail />, text: 'support@cheflinx.com' },
     { icon: <FiMapPin />, text: 'Ward No. 13 , Near Jai Bhawani Colony , Railway Station Road Khitola,Sihora-483225 ' }
   ],
   social: [
-    { icon: <FiFacebook />, name: 'Facebook', href: '#' },
-    { icon: <FiTwitter />, name: 'Twitter', href: '#' },
-    { icon: <FiInstagram />, name: 'Instagram', href: 'https://www.instagram.com/get_insta_fresh/' },
-    { icon: <FiLinkedin />, name: 'LinkedIn', href: '#' }
+    { icon: <FiFacebook />, name: 'Facebook', href: 'https://facebook.com/cheflinx' },
+    { icon: <FiTwitter />, name: 'Twitter', href: 'https://twitter.com/cheflinx' },
+    { icon: <FiInstagram />, name: 'Instagram', href: 'https://www.instagram.com/cheflinx/' },
+    { icon: <FiLinkedin />, name: 'LinkedIn', href: 'https://linkedin.com/company/cheflinx' },
+    { icon: <FaWhatsapp />, name: 'Contact Support', href: 'https://wa.me/918717986200' }
   ],
   appStores: [
     {
@@ -67,7 +69,7 @@ export default function Footer() {
           {/* Brand Column */}
           <motion.div variants={fadeInUp} className="lg:col-span-2">
             <Link href="/" className="text-2xl font-bold mb-6 block">
-              Get Instant Fresh
+              Cheflinx
             </Link>
             <p className="text-gray-400 mb-6">
               Your trusted partner in restaurant supplies. We deliver quality ingredients and 
@@ -177,7 +179,7 @@ export default function Footer() {
           className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Get Instant Fresh. All rights reserved.
+            © {new Date().getFullYear()} Cheflinx. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-gray-400 hover:text-white text-sm">
@@ -194,4 +196,4 @@ export default function Footer() {
       </motion.div>
     </footer>
   );
-} 
+}

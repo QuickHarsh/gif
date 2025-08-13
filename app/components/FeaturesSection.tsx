@@ -28,7 +28,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +37,8 @@ export default function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Why Choose Get Instant Fresh?</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose Cheflinx?</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We deliver quality ingredients and supplies to help your business thrive
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ export default function FeaturesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="text-center p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-800/50"
+              className="text-center p-6 rounded-lg bg-white shadow-lg"
             >
               <motion.div 
                 initial={{ scale: 0 }}
@@ -63,16 +63,16 @@ export default function FeaturesSection() {
                   damping: 20,
                   delay: 0.1 + index * 0.1 
                 }}
-                className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-primary-100 dark:bg-primary-900 rounded-full text-primary-600 dark:text-primary-400"
+                className="w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-primary-100 rounded-full text-primary-600"
               >
                 {feature.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
-} 
+}

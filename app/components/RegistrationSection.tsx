@@ -69,7 +69,7 @@ export default function RegistrationSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Get Instant Fresh Today</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Cheflinx Today</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose your role and start your journey with us
           </p>
@@ -107,12 +107,13 @@ export default function RegistrationSection() {
                 ))}
               </div>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary w-full"
-              >
-                Create Account
-              </motion.button>
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-primary w-full"
+                  onClick={() => window.location.href = '/register/home'}
+                >
+                  Create Account
+                </motion.button>
             </div>
           </motion.div>
 
@@ -147,12 +148,13 @@ export default function RegistrationSection() {
                 ))}
               </div>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary w-full"
-              >
-                Create Account
-              </motion.button>
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-primary w-full"
+                  onClick={() => window.location.href = '/register/restaurant'}
+                >
+                  Create Account
+                </motion.button>
             </div>
           </motion.div>
         </div>
@@ -174,4 +176,4 @@ export default function RegistrationSection() {
       </div>
     </section>
   );
-} 
+}

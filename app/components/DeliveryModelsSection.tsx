@@ -8,8 +8,8 @@ const deliveryModels = [
     title: "Wholesale Next Day",
     description: "Perfect for planned purchases and bulk orders",
     icon: <FiTruck className="w-8 h-8" />,
-    color: "bg-blue-50 dark:bg-blue-900/30",
-    iconColor: "text-blue-600 dark:text-blue-400",
+    color: "bg-blue-50",
+    iconColor: "text-blue-600",
     features: [
       {
         icon: <FiCalendar className="w-5 h-5" />,
@@ -33,8 +33,8 @@ const deliveryModels = [
     title: "Express Delivery",
     description: "For urgent requirements and same-day needs",
     icon: <FiZap className="w-8 h-8" />,
-    color: "bg-amber-50 dark:bg-amber-900/30",
-    iconColor: "text-amber-600 dark:text-amber-400",
+    color: "bg-amber-50",
+    iconColor: "text-amber-600",
     features: [
       {
         icon: <FiClock className="w-5 h-5" />,
@@ -58,7 +58,7 @@ const deliveryModels = [
 
 export default function DeliveryModelsSection() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-gray-50">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,8 +67,8 @@ export default function DeliveryModelsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Choose Your Delivery Model</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Choose Your Delivery Model</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Select the delivery option that best suits your business needs, from cost-effective bulk orders to urgent express delivery
           </p>
         </motion.div>
@@ -81,16 +81,16 @@ export default function DeliveryModelsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-gray-800/50 overflow-hidden border border-gray-100 dark:border-gray-700"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100"
             >
               <div className={`p-8 ${model.color}`}>
                 <div className="flex items-center space-x-4">
-                  <div className={`w-16 h-16 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm flex items-center justify-center ${model.iconColor}`}>
+                  <div className={`w-16 h-16 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center ${model.iconColor}`}>
                     {model.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{model.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{model.description}</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{model.title}</h3>
+                    <p className="text-gray-600">{model.description}</p>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function DeliveryModelsSection() {
                       <div className={`${model.iconColor}`}>
                         {feature.icon}
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300">{feature.text}</span>
+                      <span className="text-gray-700">{feature.text}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -118,7 +118,7 @@ export default function DeliveryModelsSection() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className={`mt-8 w-full py-3 px-6 rounded-lg font-semibold text-white 
-                    ${index === 0 ? 'bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600' : 'bg-amber-600 hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600'}
+                    ${index === 0 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-amber-600 hover:bg-amber-700'}
                     transition-colors duration-200`}
                 >
                   Choose {model.title}
@@ -135,9 +135,9 @@ export default function DeliveryModelsSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600">
             Need a custom delivery solution?{' '}
-            <button className="text-primary-600 dark:text-primary-400 font-semibold hover:underline">
+            <button className="text-primary-600 font-semibold hover:underline">
               Contact our team
             </button>
           </p>
@@ -145,4 +145,4 @@ export default function DeliveryModelsSection() {
       </div>
     </section>
   );
-} 
+}

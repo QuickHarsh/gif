@@ -115,7 +115,7 @@ const categories = [
 
 export default function CategorySection() {
   return (
-    <section className="py-12 bg-white dark:bg-gray-900">
+    <section className="py-12 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ export default function CategorySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">OUR CATEGORIES</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">OUR CATEGORIES</h2>
         </motion.div>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3">
@@ -135,7 +135,7 @@ export default function CategorySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer"
+                className="group bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer"
               >
                 <div className="relative w-full" style={{ paddingBottom: '100%' }}>
                   <Image
@@ -148,7 +148,7 @@ export default function CategorySection() {
                   />
                 </div>
                 <div className="p-2 text-center">
-                  <h3 className="text-xs font-medium text-gray-900 dark:text-white leading-tight">
+                  <h3 className="text-xs font-medium text-gray-900 leading-tight">
                     {category.title}
                   </h3>
                 </div>
@@ -159,4 +159,4 @@ export default function CategorySection() {
       </div>
     </section>
   );
-} 
+}
