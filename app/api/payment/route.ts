@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route';
 
 // Mock payment gateway configurations
 const PAYMENT_GATEWAYS = {
@@ -32,7 +33,7 @@ const PAYMENT_GATEWAYS = {
 // Get available payment methods
 export async function GET() {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Filter enabled payment gateways
     const availablePaymentMethods = Object.entries(PAYMENT_GATEWAYS)

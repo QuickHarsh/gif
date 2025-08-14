@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import Cart from '@/app/models/Cart';
 import Product from '@/app/models/Product';
@@ -57,7 +58,7 @@ async function getOrCreateCart(userId?: string) {
 // Get cart
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     
     await connectDB();
@@ -83,7 +84,7 @@ export async function GET(request: NextRequest) {
 // Add item to cart
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     
     const { productId, variantId, quantity = 1 } = await request.json();
@@ -197,7 +198,7 @@ export async function POST(request: NextRequest) {
 // Clear cart
 export async function DELETE(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     
     await connectDB();

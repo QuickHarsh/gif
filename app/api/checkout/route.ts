@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import Cart from '@/app/models/Cart';
 import Order from '@/app/models/Order';
@@ -9,7 +10,7 @@ import { sendOrderConfirmationEmail } from '@/app/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     const cookieStore = cookies();
     const sessionId = cookieStore.get('cartSessionId')?.value;

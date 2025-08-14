@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import User from '@/app/models/User';
 
 // Get a specific address
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if (!session || !session.user) {
       return NextResponse.json(
@@ -51,7 +52,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 // Update an address
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if (!session || !session.user) {
       return NextResponse.json(
@@ -118,7 +119,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 // Delete an address
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if (!session || !session.user) {
       return NextResponse.json(

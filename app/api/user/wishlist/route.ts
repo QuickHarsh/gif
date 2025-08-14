@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import User from '@/app/models/User';
 import Product from '@/app/models/Product';
@@ -7,7 +8,7 @@ import Product from '@/app/models/Product';
 // Get user's wishlist
 export async function GET() {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     if (!session?.user?.id) {
       return NextResponse.json(
@@ -50,7 +51,7 @@ export async function GET() {
 // Add product to wishlist
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     if (!session?.user?.id) {
       return NextResponse.json(
@@ -119,7 +120,7 @@ export async function POST(request: NextRequest) {
 // Remove all products from wishlist
 export async function DELETE() {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     if (!session?.user?.id) {
       return NextResponse.json(

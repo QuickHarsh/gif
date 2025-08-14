@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import Cart from '@/app/models/Cart';
 import Product from '@/app/models/Product';
@@ -8,7 +9,7 @@ import { cookies } from 'next/headers';
 // Update cart item
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     const cookieStore = cookies();
     const sessionId = cookieStore.get('cartSessionId')?.value;
@@ -117,7 +118,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 // Remove item from cart
 export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     const userId = session?.user?.id;
     const cookieStore = cookies();
     const sessionId = cookieStore.get('cartSessionId')?.value;

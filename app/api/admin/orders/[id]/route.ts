@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../../auth/[...nextauth]/route';
 import connectDB from '@/lib/db';
 import Order from '@/models/Order';
 import { sendOrderStatusUpdateEmail } from '@/lib/email';
@@ -7,7 +8,7 @@ import { sendOrderStatusUpdateEmail } from '@/lib/email';
 // Get specific order details (admin only)
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Check if user is admin
     if (!session?.user || session.user.role !== 'admin') {
@@ -55,7 +56,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 // Update order (admin only)
 export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Check if user is admin
     if (!session?.user || session.user.role !== 'admin') {

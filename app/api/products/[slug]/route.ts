@@ -2,13 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/app/lib/db';
 import Product from '@/app/models/Product';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../../auth/[...nextauth]/route';
 import User from '@/app/models/User';
 
 // Get a single product by slug
 export async function GET(request: NextRequest, { params }: { params: { slug: string } }) {
   try {
     const slug = params.slug;
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     await connectDB();
     
@@ -77,7 +78,7 @@ export async function GET(request: NextRequest, { params }: { params: { slug: st
 // Update a product (admin only)
 export async function PUT(request: NextRequest, { params }: { params: { slug: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Check authentication and authorization
     if (!session || !session.user || session.user.role !== 'admin') {
@@ -140,7 +141,7 @@ export async function PUT(request: NextRequest, { params }: { params: { slug: st
 // Delete a product (admin only)
 export async function DELETE(request: NextRequest, { params }: { params: { slug: string } }) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Check authentication and authorization
     if (!session || !session.user || session.user.role !== 'admin') {

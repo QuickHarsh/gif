@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/app/lib/db';
 import Product from '@/app/models/Product';
 import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../auth/[...nextauth]/route';
 
 // Get all products with filtering, pagination, and sorting
 export async function GET(request: NextRequest) {
@@ -87,7 +88,7 @@ export async function GET(request: NextRequest) {
 // Create a new product (admin only)
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
     
     // Check authentication and authorization
     if (!session || !session.user || session.user.role !== 'admin') {
