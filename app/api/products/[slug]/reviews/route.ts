@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/app/lib/db';
 import Product from '@/app/models/Product';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../../auth/[...nextauth]/route';
 
 // Get all reviews for a product
 export async function GET(request: NextRequest, { params }: { params: { slug: string } }) {
@@ -68,7 +67,7 @@ export async function GET(request: NextRequest, { params }: { params: { slug: st
 // Add a new review
 export async function POST(request: NextRequest, { params }: { params: { slug: string } }) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     
     // Check authentication
     if (!session || !session.user) {

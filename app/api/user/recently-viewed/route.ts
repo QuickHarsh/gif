@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import User from '@/app/models/User';
 import Product from '@/app/models/Product';
@@ -8,7 +7,7 @@ import Product from '@/app/models/Product';
 // Get user's recently viewed products
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     
     if (!session?.user?.id) {
       return NextResponse.json(
@@ -55,7 +54,7 @@ export async function GET(request: NextRequest) {
 // Clear recently viewed products
 export async function DELETE() {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     
     if (!session?.user?.id) {
       return NextResponse.json(

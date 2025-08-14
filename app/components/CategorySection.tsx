@@ -8,104 +8,104 @@ const categories = [
   {
     title: "Fruits & Vegetables",
     description: "Farm-fresh vegetables, fruits, and herbs",
-    image: "https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/fruits-vegetables.jpg",
     slug: "fruits-vegetables",
     items: ["Vegetables", "Fruits", "Herbs", "Microgreens"]
   },
   {
     title: "Masala,Salt & Sugar",
     description: "Premium quality Masale",
-    image: "https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/spices.jpg",
     items: ["Chilli,Turmeric,Coriender Powder", "Grounded Spices", "Whole Spices", "Salt & Sugar","Mouth Freshner & Papad"]
   },
   {
     title: "Dairy",
     description: "Fresh dairy products ",
-    image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/dairy.jpg",
     items: ["Milk & Milk Powder", "Cheese", "Butter", "Cream","Ghee","Curd","Paneer","Khoya"]
   },
   {
     title: "Packaging",
     description: "Food-grade packaging solutions",
-    image: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/packaging.jpg",
     items: ["Containers", "Bags", "Boxes", "Disposables"]
   },
   {
     title: "Kitchen Equipment",
     description: "Professional kitchen tools and equipment",
-    image: "https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/kitchen-equipment.jpg",
     items: ["Utensils", "Appliances", "Tools", "Storage"]
   },
   {
     title: "Cleaning Supplies",
     description: "Restaurant-grade cleaning products",
-    image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/cleaning.jpg",
     items: ["Detergents", "Sanitizers", "Equipment", "Tools"]
   },
   {
     title: "Sauces & Seasoning",
     description: "Premium quality Sauces",
-    image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/sauces.jpg",
     items: ["Mayonnaise,Dips & Dressing","Ketchup,Puree & Paste","Vineger,Soya & Chilli Sauces","MSG,Flavors & Essence","Oregeno,Chilli Flakes &Seasoning","Instant Noodles","Chutney & Pickles"]
   },
   {
     title: "Canned & Imported Items",
     description: "Grade-A canned and imported goods",
-    image: "https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/canned-imported.jpg",
     items: ["Olives,Jallepinos","Pasta & Noodles","Italian & European","Coconut Milk Powder & Cream","Imported Bakery & Chesse"]
   },
   {
     title: "Edible Oils",
     description: "Best quality Edible Oils",
-    image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/oils.jpg",
     items: ["Sunflower Oil","Soyabean Oil","Mustard Oil","Vanaspati","Palm Oil","Cottonseed Oil"]
   },
   {
     title: "Frozen & Instant Food",
     description: "Grade - A Frozen & Instant Food",
-    image: "https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/frozen-food.jpg",
     items: ["Fries","Burger Patty","Instant Mix","Cake & Brownies",""]
   },
   {
     title: "Pulses",
     description: "Grade - A Pulses",
-    image: "https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/pulses.jpg",
     items: ["Dal","Rajma & Kabuli","Millets & Seeds"]
   },
   {
     title: "Bakery & Chocalates",
     description: "Best Bakery & Chocalates",
-    image: "https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/bakery.jpg",
     items: ["Honey,Spreads & Snacks","Chocalates & Compounds","Cake toppings & Decorations","Essence & Food color","Cake Premix","Bakery Ingredients","Bread & Buns"]
   },
   {
     title: "Beverages & Mixers",
     description: "All in One",
-    image: "https://images.pexels.com/photos/544961/pexels-photo-544961.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/beverages.jpg",
     items: ["Juices & Bar Mix","Cold Drinks","Tea & Coffee","Syrups & Crushers","Energy & Flavoured Drinks"]
   },
   {
     title: "Flour",
     description: "Grade - A Flour",
-    image: "https://images.pexels.com/photos/4198015/pexels-photo-4198015.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/flour.jpg",
     items: ["Atta,Maida & Sooji","Corn Flour & Besan & Others"]
   },
   {
     title: "Rice & Rice Products",
     description: "Grade - A Rice & Rice Products",  
-    image: "https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/rice.jpg",
     items: ["Basmati & Biryani Rice","Poha,Idli & Others","Staff Rice","Sona Masori & Kolam Rice","Indrayani Rice","Thali,Table Rice"]
   },
   {
     title: "Dry Fruits & Nuts",
     description: "Grade - A Dry Fruits & Nuts",
-    image: "https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/dry-fruits.webp",
     items: ["Cashews","Peanuts & Others","Almonds,Risens & Pista","Magaj"]
   },
   {
     title: "Bread & Buns Bases",
     description: "Grade - A Frozen & Instant Food",
-    image: "https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "/images/categories/instant.webp",
     items: ["Fries","Burger Patty","Instant Mix","Cake & Brownies",""]
   },
 ].map(category => ({

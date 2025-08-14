@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import Cart from '@/app/models/Cart';
 import Product from '@/app/models/Product';
@@ -8,13 +7,19 @@ import { cookies } from 'next/headers';
 import crypto from 'crypto';
 
 // Helper to get or create cart
-async function getOrCreateCart(userId?: string, cookieStore?: any) {
+async function getOrCreateCart(userId?: string) {
+  const cookieStore = cookies();
   let sessionId = cookieStore.get('cartSessionId')?.value;
   
   // Create a new session ID if none exists
   if (!sessionId) {
     sessionId = crypto.randomBytes(16).toString('hex');
-    // Note: We can't set cookies in helper function, will be handled in route handlers
+    cookieStore.set('cartSessionId', sessionId, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 60 * 60 * 24 * 30, // 30 days
+      path: '/',
+    });
   }
   
   let cart;
@@ -52,13 +57,12 @@ async function getOrCreateCart(userId?: string, cookieStore?: any) {
 // Get cart
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const userId = session?.user?.id;
-    const cookieStore = cookies();
     
     await connectDB();
     
-    const cart = await getOrCreateCart(userId, cookieStore);
+    const cart = await getOrCreateCart(userId);
     
     // Populate product details
     await cart.populate({
@@ -79,9 +83,8 @@ export async function GET(request: NextRequest) {
 // Add item to cart
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const userId = session?.user?.id;
-    const cookieStore = cookies();
     
     const { productId, variantId, quantity = 1 } = await request.json();
     
@@ -132,20 +135,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Get or create cart
-    let cart = await getOrCreateCart(userId, cookieStore);
-    
-    // Handle session ID creation if needed
-    if (!userId && !cookieStore.get('cartSessionId')?.value) {
-      const sessionId = crypto.randomBytes(16).toString('hex');
-      cookieStore.set('cartSessionId', sessionId, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        maxAge: 60 * 60 * 24 * 30, // 30 days
-        path: '/',
-      });
-      // Create cart with new session ID
-      cart = await Cart.create({ sessionId });
-    }
+    const cart = await getOrCreateCart(userId);
     
     // Check if item already exists in cart
     const existingItemIndex = cart.items.findIndex((item: any) => {
@@ -207,13 +197,12 @@ export async function POST(request: NextRequest) {
 // Clear cart
 export async function DELETE(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const userId = session?.user?.id;
-    const cookieStore = cookies();
     
     await connectDB();
     
-    const cart = await getOrCreateCart(userId, cookieStore);
+    const cart = await getOrCreateCart(userId);
     
     // Clear items
     cart.items = [];

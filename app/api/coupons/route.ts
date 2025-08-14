@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import Cart from '@/app/models/Cart';
 import { cookies } from 'next/headers';
@@ -64,7 +63,7 @@ const COUPONS = [
 // Apply coupon to cart
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const userId = session?.user?.id;
     const cookieStore = cookies();
     const sessionId = cookieStore.get('cartSessionId')?.value;
@@ -206,7 +205,7 @@ export async function POST(request: NextRequest) {
 // Remove coupon from cart
 export async function DELETE() {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     const userId = session?.user?.id;
     const cookieStore = cookies();
     const sessionId = cookieStore.get('cartSessionId')?.value;

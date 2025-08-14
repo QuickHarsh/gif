@@ -268,10 +268,14 @@ const CataloguePage = () => {
                   >
                     <div className="relative h-48 w-full overflow-hidden">
                       <Image
-                        src={category.image || 'https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=400'}
+                        src={category.image || '/images/categories/placeholder.jpg'}
                         alt={category.title}
                         fill
                         className="object-cover transition-transform hover:scale-105"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/images/categories/placeholder.jpg';
+                        }}
                       />
                     </div>
                     <div className="p-4">
@@ -315,10 +319,14 @@ const CataloguePage = () => {
                     <div className="flex flex-col md:flex-row">
                       <div className="relative h-48 md:h-auto md:w-1/4 overflow-hidden">
                         <Image
-                          src={category.image || 'https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=400'}
+                          src={category.image || '/images/categories/placeholder.jpg'}
                           alt={category.title}
                           fill
                           className="object-cover transition-transform hover:scale-105"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/images/categories/placeholder.jpg';
+                          }}
                         />
                       </div>
                       <div className="p-6 md:w-3/4">

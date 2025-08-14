@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/app/lib/db';
 import User from '@/app/models/User';
 
 // Get all addresses for the current user
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
 
     if (!session || !session.user) {
       return NextResponse.json(
@@ -42,7 +41,7 @@ export async function GET(request: NextRequest) {
 // Add a new address
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
 
     if (!session || !session.user) {
       return NextResponse.json(

@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
 import connectDB from '@/lib/db';
 import Order from '@/models/Order';
 
 // Get all orders (admin only)
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession();
     
     // Check if user is admin
     if (!session?.user || session.user.role !== 'admin') {
