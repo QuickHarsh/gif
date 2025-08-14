@@ -84,7 +84,7 @@ export default function QualitySection() {
             <div className="absolute inset-0 bg-gradient-to-r from-primary-100 to-primary-200" />
             <div className="absolute inset-0 flex items-center justify-center">
               <img 
-                src="/images/categories/fruits-vegetables.jpg"
+                src="https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Quality Products"
                 className="w-full h-full object-cover"
               />

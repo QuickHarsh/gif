@@ -18,10 +18,10 @@ const staggerContainer = {
 
 // Add your image paths here
 const categories = [
-  { name: "Fresh Produce", image: "/images/categories/fruits-vegetables.jpg" }, // Add your image URL later
-  { name: "Kitchen Equipment", image: "/images/categories/kitchen-equipment.jpg"},
-  { name: "Packaging", image: "/images/categories/packaging.jpg" },
-  { name: "Cleaning Supplies", image: "/images/categories/cleaning.jpg" }
+  { name: "Fresh Produce", image: "https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { name: "Kitchen Equipment", image: "https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { name: "Packaging", image: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400" },
+  { name: "Cleaning Supplies", image: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=400" }
 ];
 
 export default function HeroSection() {
